@@ -1,50 +1,99 @@
-# React + TypeScript + Vite
+# D&D Spell Catalog
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Um catálogo interativo de magias de Dungeons & Dragons com sistema de autenticação e filtros avançados.
 
-Currently, two official plugins are available:
+## 🎯 Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Catálogo de Magias**
 
-## Expanding the ESLint configuration
+  - Visualização em cards com imagens
+  - Descrições detalhadas
+  - Indicadores para magias de ritual e concentração
+  - Suporte para magias homebrew
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Sistema de Filtros**
 
-- Configure the top-level `parserOptions` property like this:
+  - Busca por nome ou descrição
+  - Filtro por classe (Mago, Clérigo, etc.)
+  - Nível de magia (0-9)
+  - Escola de magia
+  - Tempo de conjuração
+  - Filtros para magias homebrew, ritual e concentração
+  - Fonte da magia (PHB, Xanathar's Guide, etc.)
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- **Autenticação de Usuários**
+  - Login com Google ou Apple
+  - Perfil de usuário
+  - Adição de novas magias (apenas usuários autenticados)
+
+## 🚀 Tecnologias
+
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- React Router
+- Headless UI
+
+## 📋 Pré-requisitos
+
+- Node.js (versão 16 ou superior)
+- npm ou yarn
+
+## 🛠️ Instalação
+
+1. Clone o repositório:
+
+```bash
+git clone https://github.com/seu-usuario/findspell.git
+cd findspell
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. Instale as dependências:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+npm install
+# ou
+yarn install
 ```
+
+3. Inicie o servidor de desenvolvimento:
+
+```bash
+npm run dev
+# ou
+yarn dev
+```
+
+4. Acesse o projeto:
+   Abra [http://localhost:5173](http://localhost:5173) no seu navegador.
+
+## 📦 Scripts Disponíveis
+
+- `npm run dev` - Inicia o servidor de desenvolvimento
+- `npm run build` - Cria a versão de produção
+- `npm run preview` - Visualiza a versão de produção localmente
+
+## 🎨 Estrutura do Projeto
+
+```
+src/
+  ├── components/     # Componentes React
+  ├── contexts/       # Contextos da aplicação
+  ├── types/         # Tipos TypeScript
+  ├── utils/         # Funções utilitárias
+  ├── config/        # Configurações
+  └── data/          # Dados mockados
+```
+
+## 🤝 Contribuindo
+
+1. Faça um fork do projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
+
+## 📝 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
