@@ -84,6 +84,7 @@ src/
   ├── utils/         # Funções utilitárias
   ├── config/        # Configurações
   └── data/          # Dados mockados
+  └── backend/       # Estrutura backend com fastapi
 ```
 
 ## 🤝 Contribuindo
