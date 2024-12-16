@@ -1,4 +1,4 @@
-version: '3.8' 
+version: '3.8'
 
 services:
   postgres:
@@ -22,7 +22,8 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - ./src/backend:/app
+      - ./src/backend:/app/backend
+      - ./requirements.txt:/app/backend/requirements.txt
     depends_on:
       - postgres
     environment:
@@ -33,11 +34,13 @@ services:
       context: .
       dockerfile: ./src/frontend/Dockerfile
     container_name: frontend_container
-    command: npm run dev --host
+    command: npm run dev -- --host 0.0.0.0
     ports:
       - "5173:5173"
     volumes:
-      - ./src/frontend:/app
+      - ./src/frontend:/app/frontend
+      - ./package.json:/app/package.json
+      - ./package-lock.json:/app/package-lock.json
       - /app/node_modules
     depends_on:
       - backend

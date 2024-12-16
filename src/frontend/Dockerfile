@@ -1,14 +1,14 @@
 FROM node:18
 
-EXPOSE 5173
+COPY ./package.json /app/frontend/package.json
+COPY ./package-lock.json /app/frontend/package-lock.json
 
-WORKDIR /app
-
-COPY /src/frontend/package.json /app/package.json
-COPY /src/frontend/package-lock.json /app/package-lock.json
+WORKDIR /app/frontend
 
 RUN npm install
 
-COPY . .
+COPY ./src/frontend /app/frontend
 
-CMD ["npm", "run", "dev", "--host"]
+EXPOSE 5173
+
+CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0"]

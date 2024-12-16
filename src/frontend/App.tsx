@@ -1,12 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
-import { SpellCard } from "./src/frontend/components/SpellCard";
-import { SpellFilters } from "./src/frontend/components/SpellFilters";
-import { Navbar } from "./src/frontend/components/Navbar";
-import type { SpellFilters as SpellFiltersType } from "./src/frontend/types/spell";
-import { exampleSpells } from "./src/frontend/data/exampleSpells";
-import { filterSpells } from "./src/frontend/utils/filterSpells";
-import { AuthProvider } from "./src/frontend/contexts/AuthContext";
+import { SpellCard } from "./components/SpellCard";
+import { SpellFilters } from "./components/SpellFilters";
+import { Navbar } from "./components/Navbar";
+import type { SpellFilters as SpellFiltersType } from "./types/spell";
+import { exampleSpells } from "./data/exampleSpells";
+import { filterSpells } from "./utils/filterSpells";
+import { AuthProvider } from "./contexts/AuthContext";
 
 const initialFilters: SpellFiltersType = {
   search: "",
